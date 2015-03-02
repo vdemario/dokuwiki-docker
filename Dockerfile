@@ -20,7 +20,7 @@ RUN apt-get -y install wget \
     php5-cgi \
     php5-gd
 
-# Download & deploy twiki
+# Download & deploy dokuwiki
 RUN wget -O /dokuwiki.tgz \
     "http://download.dokuwiki.org/src/dokuwiki/dokuwiki-$DOKUWIKI_VERSION.tgz"
 RUN if [ "$DOKUWIKI_CSUM" != "$(md5sum /dokuwiki.tgz | awk '{print($1)}')" ];\
